@@ -2,6 +2,6 @@
 
 export default function Home() {
   return (
-    <h1 className="text-purple-500 font-bold text-3xl">Welcome to Next Js</h1>
+    <h1 className=" text-3xl font-bold text-purple-500">Welcome to Next Js</h1>
   );
 }
