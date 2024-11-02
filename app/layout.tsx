@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 // eslint-disable-next-line camelcase
 import { Inter, Space_Grotesk } from "next/font/google";
+
 import "./globals.css";
+import ThemeProvider from "@/context/Theme";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,11 +31,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
